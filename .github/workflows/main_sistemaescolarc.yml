@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build SistemaEscolarC --configuration Release
+        run: dotnet build SistemaPrimaria --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/SistemaEscolarC
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/SistemaPrimaria
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'SistemaEscolarC'
+          app-name: 'SistemaPrimaria'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D041DFF256DF4E34AF574B90865E89E8 }}
           package: .
