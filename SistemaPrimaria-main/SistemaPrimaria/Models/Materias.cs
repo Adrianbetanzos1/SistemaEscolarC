@@ -7,8 +7,9 @@ namespace SistemaPrimaria.Models
 {
     public class Materias
     {
-        string NombreMateria {get; set;}
-        int Id_materia { get; set; }
+        public int Id { get; set; }
+        public string NombreMateria {get; set;}
+        
 
         public Materias()
         {
