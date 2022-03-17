@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build SistemaPrimaria-main --configuration Release
+        run: dotnet build SistemaPrimaria-main\SistemaPrimaria --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/SistemaPrimaria-main
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/SistemaPrimaria-main\SistemaPrimaria
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'SistemaPrimaria-main'
+          app-name: 'SistemaPrimaria\SistemaPrimaria'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D041DFF256DF4E34AF574B90865E89E8 }}
           package: .
