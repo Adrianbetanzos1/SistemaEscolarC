@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'SistemaPrimaria\SistemaPrimaria'
+          app-name: 'SistemaPrimaria-main\SistemaPrimaria'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D041DFF256DF4E34AF574B90865E89E8 }}
           package: .
